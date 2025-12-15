@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "fitfind-db",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "fitfind",
+          "database_id": "85644e59-e01c-408c-bda2-87987e536bd2"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "b33ee52482464ad0a4efbf9492dc0bb5",
+            "binding": "SECRET",
+            "secret_name": "FITFIND"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
